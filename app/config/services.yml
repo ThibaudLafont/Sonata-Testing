@@ -47,7 +47,7 @@ services:
         class: Application\Sonata\MediaBundle\Provider\CustomImageProvider
         autowiring: true
         arguments:
-            $name: 'Image'
+            $name: 'sonata.media.provider.custom.image'
             $filesystem: '@sonata.media.filesystem.local'
             $cdn: '@sonata.media.cdn.server'
             $pathGenerator: '@sonata.media.generator.default'
