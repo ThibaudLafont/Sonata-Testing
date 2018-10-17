@@ -5,6 +5,9 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Model\Metadata;
 use Sonata\MediaBundle\Model\MediaInterface;
 use Sonata\MediaBundle\Provider\ImageProvider;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class CustomImageProvider extends ImageProvider
 {
@@ -15,6 +18,20 @@ class CustomImageProvider extends ImageProvider
     public function getProviderMetadata()
     {
         return new Metadata('Image', $this->getName().'.description', false, 'SonataMediaBundle', ['class' => 'fa fa-picture-o']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function buildCreateForm(FormMapper $formMapper)
+    {
+        $formMapper->add('binaryContent', FileType::class, [
+            'constraints' => [
+                new NotBlank(),
+                new NotNull(),
+            ],
+        ]);
+        $formMapper->add('description');
     }
 
     /**
