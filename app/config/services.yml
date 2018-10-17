@@ -1,7 +1,6 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
-    #parameter_name: value
 
 services:
     # default configuration for services in *this* file
@@ -42,6 +41,16 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true
+
+    custom.media.admin.gallery:
+        class: Application\Sonata\MediaBundle\Admin\GalleryAdmin
+        arguments:
+            - ~
+            - Application\Sonata\MediaBundle\Entity\Gallery
+            - Application:GalleryAdmin
+            - '@sonata.media.pool'
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin}
 
     sonata.media.provider.custom.image:
         class: Application\Sonata\MediaBundle\Provider\CustomImageProvider

@@ -4,6 +4,7 @@ namespace Application\Sonata\MediaBundle\Entity;
 
 use AppBundle\Entity\Post;
 use Doctrine\Common\Collections\ArrayCollection;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\MediaBundle\Entity\BaseGallery as BaseGallery;
 use Doctrine\ORM\Mapping as ORM;
 

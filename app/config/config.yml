@@ -71,6 +71,14 @@ sensio_framework_extra:
    router:
         annotations: false
 
+sonata_admin:
+    dashboard:
+        groups:
+            Médias:
+                items:
+                    - custom.media.admin.gallery
+    #               - sonata.media.admin.media
+
 sonata_block:
     blocks:
         sonata.admin.block.admin_list:
@@ -90,11 +98,9 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-
     cdn:
         server:
             path: /uploads/media
-
     filesystem:
         local:
             directory:  "%kernel.root_dir%/../web/uploads/media"
