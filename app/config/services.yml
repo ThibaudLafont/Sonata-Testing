@@ -43,6 +43,28 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true
 
+    sonata.media.provider.test:
+        class: Application\Sonata\MediaBundle\Provider\TestProvider
+        autowiring: true
+        arguments:
+            $name: 'sonata.media.provider.test'
+            $filesystem: '@sonata.media.filesystem.local'
+            $cdn: '@sonata.media.cdn.server'
+            $pathGenerator: '@sonata.media.generator.default'
+            $thumbnail: '@sonata.media.thumbnail.format'
+            $allowedExtensions: ['jpg']
+            $allowedMimeTypes: ['image/jpeg']
+            $adapter: '@sonata.media.adapter.image.gd'
+        tags:
+            - { name: sonata.media.provider }
+        calls:
+            - method: setTemplates
+              arguments: [{helper_thumbnail:'src/sonata-project/media-bundle/src/Resources/views/Provider/thumbnail.html.twig', helper_view:'src/sonata-project/media-bundle/src/Resources/views/Provider/view_image.html.twig'}]
+            - method: setResizer
+              arguments:
+                  - '@sonata.media.resizer.simple'
+
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
