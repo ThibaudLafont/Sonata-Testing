@@ -5,7 +5,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\MediaBundle\Model\MediaInterface;
 use Sonata\MediaBundle\Provider\ImageProvider;
 
-class TestProvider extends ImageProvider
+class CustomImageProvider extends ImageProvider
 {
     /**
      * {@inheritdoc}

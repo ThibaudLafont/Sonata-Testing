@@ -43,11 +43,11 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true
 
-    sonata.media.provider.test:
-        class: Application\Sonata\MediaBundle\Provider\TestProvider
+    sonata.media.provider.custom.image:
+        class: Application\Sonata\MediaBundle\Provider\CustomImageProvider
         autowiring: true
         arguments:
-            $name: 'sonata.media.provider.test'
+            $name: 'Image'
             $filesystem: '@sonata.media.filesystem.local'
             $cdn: '@sonata.media.cdn.server'
             $pathGenerator: '@sonata.media.generator.default'
