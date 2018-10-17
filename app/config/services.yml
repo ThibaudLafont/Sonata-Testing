@@ -59,13 +59,7 @@ services:
             - { name: sonata.media.provider }
         calls:
             - method: setTemplates
-              arguments: [{helper_thumbnail:'src/sonata-project/media-bundle/src/Resources/views/Provider/thumbnail.html.twig', helper_view:'src/sonata-project/media-bundle/src/Resources/views/Provider/view_image.html.twig'}]
+              arguments: [{helper_thumbnail:'sonata/providers/thumbnail.html.twig', helper_view:'sonata/providers/view_image.html.twig'}]
             - method: setResizer
               arguments:
                   - '@sonata.media.resizer.simple'
-
-
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
