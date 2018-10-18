@@ -87,6 +87,14 @@ file that was distributed with this source code.
                                         {% endif %}
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th>
+                                        <a class="btn btn-success" href="{% path object, 'reference' %}" target="_blank">Voir</a>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="form-control" onClick="this.select();" readonly="readonly" value="{% path object, 'reference' %}" />
+                                    </td>
+                                </tr>
                             </table>
                         </div>
 

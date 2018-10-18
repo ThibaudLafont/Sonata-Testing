@@ -216,15 +216,15 @@
             </trans-unit>
             <trans-unit id="label.cdn">
                 <source>label.cdn</source>
-                <target>CDN</target>
+                <target>Upload</target>
             </trans-unit>
             <trans-unit id="label.to_be_flushed">
                 <source>label.to_be_flushed</source>
-                <target>À vider</target>
+                <target>À uploader</target>
             </trans-unit>
             <trans-unit id="label.flushed_at">
                 <source>label.flushed_at</source>
-                <target>Vidé le</target>
+                <target>Le</target>
             </trans-unit>
             <trans-unit id="label.public_url">
                 <source>label.public_url</source>
