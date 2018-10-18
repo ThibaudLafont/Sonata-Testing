@@ -3,7 +3,6 @@ namespace Application\Sonata\MediaBundle\Provider;
 
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
 trait BaseVideoProvider
 {
     /**
@@ -15,4 +14,5 @@ trait BaseVideoProvider
         $formMapper->add('description');
         $formMapper->add('binaryContent', TextType::class, ['required' => false]);
     }
+
 }
