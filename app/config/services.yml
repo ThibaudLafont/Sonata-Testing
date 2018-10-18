@@ -95,7 +95,8 @@ services:
             - method: setTemplates
               arguments: [{helper_thumbnail:'sonata/providers/thumbnail.html.twig', helper_view:'sonata/providers/view_image.html.twig'}]
             - method: setResizer
-              arguments: ['@sonata.media.resizer.simple']
+              arguments:
+                  - '@sonata.media.resizer.simple'
 
     sonata.media.provider.audio:
         class: Application\Sonata\MediaBundle\Provider\AudioProvider
