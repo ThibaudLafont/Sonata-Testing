@@ -93,8 +93,8 @@ sonata_media:
         default:
             providers:
                 - sonata.media.provider.custom.image
-                - sonata.media.provider.file
                 - sonata.media.provider.audio
+                - sonata.media.provider.file
                 - sonata.media.provider.custom.vimeo
                 - sonata.media.provider.custom.dailymotion
                 - sonata.media.provider.custom.youtube
