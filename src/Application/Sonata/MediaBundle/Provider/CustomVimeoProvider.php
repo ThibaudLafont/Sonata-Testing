@@ -19,8 +19,9 @@ class CustomVimeoProvider extends VimeoProvider
 
         if (preg_match(
                 "%(http|https)?:\/\/(www\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|)(\d+)(?:|\/\?)%",
-                $media->getBinaryContent(), $matches)
-        ) {
+                $media->getBinaryContent(),
+                $matches
+        )) {
             $media->setBinaryContent($matches[2]);
         }
     }
