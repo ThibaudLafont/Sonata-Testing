@@ -10,15 +10,6 @@ use Symfony\Component\Validator\Constraints\NotNull;
 
 class CustomImageProvider extends ImageProvider
 {
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getProviderMetadata()
-    {
-        return new Metadata('Image', $this->getName().'.description', false, 'SonataMediaBundle', ['class' => 'fa fa-picture-o']);
-    }
-
     /**
      * {@inheritdoc}
      */

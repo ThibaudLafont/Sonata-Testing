@@ -2,21 +2,10 @@
 namespace Application\Sonata\MediaBundle\Admin;
 
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\MediaBundle\Admin\BaseMediaAdmin;
 
-class GalleryAdmin extends \Sonata\MediaBundle\Admin\GalleryAdmin
+class MediaAdmin extends BaseMediaAdmin
 {
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper
-            ->addIdentifier('name')
-        ;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -29,5 +18,4 @@ class GalleryAdmin extends \Sonata\MediaBundle\Admin\GalleryAdmin
             ])
         ;
     }
-
 }
