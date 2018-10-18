@@ -5,5 +5,7 @@ use Sonata\MediaBundle\Provider\VimeoProvider;
 
 class CustomVimeoProvider extends VimeoProvider
 {
-    
+
+    use BaseVideoProvider;
+
 }

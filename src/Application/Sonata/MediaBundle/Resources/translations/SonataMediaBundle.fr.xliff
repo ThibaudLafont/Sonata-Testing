@@ -18,6 +18,22 @@
                 <source>sonata.media.provider.custom.youtube.description</source>
                 <target>Ajouter une vidéo venant de YouTube</target>
             </trans-unit>
+            <trans-unit id="sonata.media.provider.custom.vimeo">
+                <source>sonata.media.provider.custom.vimeo</source>
+                <target>Vimeo</target>
+            </trans-unit>
+            <trans-unit id="sonata.media.provider.custom.vimeo.description">
+                <source>sonata.media.provider.custom.vimeo.description</source>
+                <target>Ajouter une vidéo venant de Vimeo</target>
+            </trans-unit>
+            <trans-unit id="sonata.media.provider.custom.dailymotion">
+                <source>sonata.media.provider.custom.dailymotion</source>
+                <target>Dailymotion</target>
+            </trans-unit>
+            <trans-unit id="sonata.media.provider.custom.dailymotion.description">
+                <source>sonata.media.provider.custom.dailymotion.description</source>
+                <target>Ajouter une vidéo venant de Dailymotion</target>
+            </trans-unit>
             <trans-unit id="default">
                 <source>default</source>
                 <target>Défaut</target>
