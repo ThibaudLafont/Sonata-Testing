@@ -80,7 +80,6 @@ services:
     # Sonata Media providers
     sonata.media.provider.custom.image:
         class: Application\Sonata\MediaBundle\Provider\CustomImageProvider
-        autowiring: true
         arguments:
             $name: 'sonata.media.provider.custom.image'
             $filesystem: '@sonata.media.filesystem.local'
@@ -95,6 +94,25 @@ services:
         calls:
             - method: setTemplates
               arguments: [{helper_thumbnail:'sonata/providers/thumbnail.html.twig', helper_view:'sonata/providers/view_image.html.twig'}]
+            - method: setResizer
+              arguments:
+                  - '@sonata.media.resizer.simple'
+
+    sonata.media.provider.custom.youtube:
+        class: Application\Sonata\MediaBundle\Provider\CustomYoutubeProvider
+        arguments:
+            $name: 'sonata.media.provider.custom.youtube'
+            $filesystem: '@sonata.media.filesystem.local'
+            $cdn: '@sonata.media.cdn.server'
+            $pathGenerator: '@sonata.media.generator.default'
+            $thumbnail: '@sonata.media.thumbnail.format'
+            $browser: '@sonata.media.buzz.browser'
+            $metadata: '@sonata.media.metadata.proxy'
+        tags:
+            - { name: sonata.media.provider }
+        calls:
+            - method: setTemplates
+              arguments: [{helper_thumbnail:'sonata/Provider/thumbnail.html.twig', helper_view:'sonata/providers/view_youtube.html.twig'}]
             - method: setResizer
               arguments:
                   - '@sonata.media.resizer.simple'
