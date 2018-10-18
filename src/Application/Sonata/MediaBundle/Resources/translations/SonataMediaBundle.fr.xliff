@@ -10,6 +10,14 @@
                 <source>sonata.media.provider.custom.image.description</source>
                 <target>Ajouter une image</target>
             </trans-unit>
+            <trans-unit id="sonata.media.provider.audio">
+                <source>sonata.media.provider.audio</source>
+                <target>Audio</target>
+            </trans-unit>
+            <trans-unit id="sonata.media.provider.audio.description">
+                <source>sonata.media.provider.audio.description</source>
+                <target>Ajouter un enregistrement</target>
+            </trans-unit>
             <trans-unit id="sonata.media.provider.custom.youtube">
                 <source>sonata.media.provider.custom.youtube</source>
                 <target>Youtube</target>
