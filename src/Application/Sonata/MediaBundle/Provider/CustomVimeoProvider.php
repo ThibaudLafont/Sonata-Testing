@@ -1,6 +1,7 @@
 <?php
 namespace Application\Sonata\MediaBundle\Provider;
 
+use Sonata\MediaBundle\Model\MediaInterface;
 use Sonata\MediaBundle\Provider\VimeoProvider;
 
 class CustomVimeoProvider extends VimeoProvider
@@ -22,7 +23,7 @@ class CustomVimeoProvider extends VimeoProvider
                 $media->getBinaryContent(),
                 $matches
         )) {
-            $media->setBinaryContent($matches[2]);
+            $media->setBinaryContent($matches[4]);
         }
     }
 
