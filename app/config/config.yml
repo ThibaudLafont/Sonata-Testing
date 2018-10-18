@@ -76,6 +76,10 @@ sensio_framework_extra:
 sonata_admin:
     dashboard:
         groups:
+            Contenu:
+                items:
+                    - admin.category
+                    - admin.post
             Médias:
                 icon: '<i class="fa fa-image"></i>'
                 items:

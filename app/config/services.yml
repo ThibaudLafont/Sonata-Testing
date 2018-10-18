@@ -36,7 +36,7 @@ services:
         class: AppBundle\Admin\CategoryAdmin
         arguments: [~, AppBundle\Entity\Category, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Category }
+            - { name: sonata.admin, manager_type: orm, label: Categorie }
         public: true
 
     admin.post:
@@ -95,8 +95,7 @@ services:
             - method: setTemplates
               arguments: [{helper_thumbnail:'sonata/providers/thumbnail.html.twig', helper_view:'sonata/providers/view_image.html.twig'}]
             - method: setResizer
-              arguments:
-                  - '@sonata.media.resizer.simple'
+              arguments: ['@sonata.media.resizer.simple']
 
     sonata.media.provider.audio:
         class: Application\Sonata\MediaBundle\Provider\AudioProvider
