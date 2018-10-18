@@ -30,8 +30,13 @@ class Gallery extends BaseGallery
 
     public function __construct()
     {
+        // Initialize array collections
         $this->posts = new ArrayCollection();
         $this->galleryHasMedias = new ArrayCollection();
+
+        // Allow to disable fields in form
+        $this->enabled = true;
+        $this->context = "default";
     }
 
     /**

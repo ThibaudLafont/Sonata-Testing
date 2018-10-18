@@ -2,6 +2,7 @@
 # https://symfony.com/doc/current/service_container.html
 parameters:
     sonata.media.admin.gallery.class: 'Application\Sonata\MediaBundle\Admin\GalleryAdmin'
+    sonata.media.admin.gallery_has_media.class: 'Application\Sonata\MediaBundle\Admin\GalleryHasMediaAdmin'
     sonata.media.admin.media.class: 'Application\Sonata\MediaBundle\Admin\MediaAdmin'
 
 services:
@@ -30,6 +31,7 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    # Sonata Entities
     admin.category:
         class: AppBundle\Admin\CategoryAdmin
         arguments: [~, AppBundle\Entity\Category, ~]
@@ -44,6 +46,7 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true
 
+    # Sonata MediaAdmin items
     custom.media.admin.gallery:
         class: '%sonata.media.admin.gallery.class%'
         arguments:
@@ -53,6 +56,16 @@ services:
             - '@sonata.media.pool'
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Galleries}
+
+    custom.media.admin.gallery_has_media:
+        class: '%sonata.media.admin.gallery_has_media.class%'
+        arguments:
+            - ~
+            - Application\Sonata\MediaBundle\Entity\GalleryHasMedia
+            - Application:GalleryHasMediaAdmin
+            - '@sonata.media.pool'
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin}
 
     custom.media.admin.media:
         class: '%sonata.media.admin.media.class%'
@@ -64,6 +77,7 @@ services:
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Médias}
 
+    # Sonata Media providers
     sonata.media.provider.custom.image:
         class: Application\Sonata\MediaBundle\Provider\CustomImageProvider
         autowiring: true
